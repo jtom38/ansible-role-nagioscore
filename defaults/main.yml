@@ -5,12 +5,12 @@ dockerImage: 'jasonrivers/nagios'
 pathEtc: '/docker/nagios/etc'
 pathVar: '/docker/nagios/var'
 pathPlugins: '/docker/nagios/plugins'
-pathNagiosGraphVar: '/docker/nagios/graph/var'
-pathNagiosGraphEtc: '/docker/nagios/graph/var'
+pathGraphVar: '/docker/nagios/graph/var'
+pathGraphEtc: '/docker/nagios/graph/etc'
 
 envMailRelayHost: 'localhost'
 envMailInetProtocols: ''
 envNagiosFqdn: 'nagios.domain'
 envNagiosTimezone: 'America/Los_Angeles'
 
-port: 8080
+port: 80

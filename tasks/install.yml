@@ -30,7 +30,7 @@
       - "{{ pathEtc }}:/opt/nagios/etc"
       - "{{ pathVar }}:/opt/nagios/var"
       - "{{ pathPlugins }}:/opt/Custom-Nagios-Plugins"
-      - "{{ pathNagiosGraphVar }}:/opt/nagiosgraph/var"
-      - "{{ pathNagiosGraphEtc }}:/opt/nagiosgraph/etc"
+      - "{{ pathGraphVar }}:/opt/nagiosgraph/var"
+      - "{{ pathGraphEtc }}:/opt/nagiosgraph/etc"
 
 
