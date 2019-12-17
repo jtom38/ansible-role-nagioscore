@@ -65,7 +65,6 @@ TBD
   hosts: localhost
   vars:
     nagios_action: install
-    dockerImage: 'jasonrivers/nagios'
     pathEtc: '/docker/nagios/etc'
     pathVar: '/docker/nagios/var'
     pathPlugins: '/docker/nagios/plugins'
