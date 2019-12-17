@@ -1,0 +1,5 @@
+
+- include_tasks: req.yml
+
+- include_tasks: install.yml
+  when: nagios_action == 'install'
