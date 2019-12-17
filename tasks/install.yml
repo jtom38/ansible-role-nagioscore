@@ -1,0 +1,36 @@
+---
+# stop the container if its running
+- name: Stop Nagios Container
+  docker_container:
+    name: nagios
+    state: stopped
+  ignore_errors: true
+
+- name: Pull image
+  shell: "docker pull {{ dockerImage }}"
+
+- name: Remove old container
+  shell: docker container rm nagios
+  ignore_errors: true
+
+- name: Deploy Nagios
+  docker_container:
+    name: nagios
+    image: "{{ dockerImage }}:latest"
+    state: started
+    restart_policy: unless-stopped
+    env:
+      MAIL_RELAY_HOST="{{ envMailRelayHost }}"
+      MAIL_INET_PROTOCOLS="{{ envMailInetProtocols }}"
+      NAGIOS_FQDN="{{ envNagiosFqdn }}"
+      NAGIOS_TIMEZONE="{{ envNagiosTimezone }}"
+    ports:
+      - "{{ port }}:80"
+    volumes:
+      - "{{ pathEtc }}:/opt/nagios/etc"
+      - "{{ pathVar }}:/opt/nagios/var"
+      - "{{ pathPlugins }}:/opt/Custom-Nagios-Plugins"
+      - "{{ pathNagiosGraphVar }}:/opt/nagiosgraph/var"
+      - "{{ pathNagiosGraphEtc }}:/opt/nagiosgraph/etc"
+
+

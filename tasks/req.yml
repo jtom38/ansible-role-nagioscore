@@ -1,0 +1,17 @@
+
+- name: Install Docker CLI - Debian
+  apt:
+    name: docker
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Install Docker CLI - RedHat
+  yum:
+    name: docker
+    state: present
+  when: ansible_os_family == 'RedHat'
+
+- name: Install pip - docker
+  pip:
+    name: docker
+    state: present
