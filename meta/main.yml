@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  auther: luther38
+  author: luther38
   description: Nagios Core within docker
   #company:
   #licence: "license "
